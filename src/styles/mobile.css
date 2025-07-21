@@ -1,0 +1,525 @@
+.mobile-navbar {
+  display: none;
+}
+
+.text-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+
+  .image-container {
+    padding: 0 15px;
+  }
+  .mobile-navbar {
+    display: block;
+    background: #0f012b;
+    padding: 1rem;
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .mobile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .logo img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+  }
+
+  .hamburger {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #1c0040;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-menu li {
+    margin-bottom: 0.75rem;
+  }
+
+  .mobile-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    display: block;
+    word-wrap: break-word;
+  }
+
+  .image-container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 426px) {
+  .hero-section {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-wrapper img {
+    max-width: 95%;
+    max-height: 85%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+
+  .hero-content {
+    position: relative;
+  }
+
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 250px;
+  }
+
+  .slide.active {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .hero-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .hero-navigation button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section1 .container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .section1 .left h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .section1 .left p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .section1 .right .item {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .section1 .right .text h3 {
+    font-size: 1rem;
+  }
+
+  .section3 .wrapper {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .section3 .judul {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .section3 .visual img {
+    width: 100%;
+    height: auto;
+  }
+
+  .section3 .description {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .section4 {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .section4 .heading {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .section4 .subheading {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .feature {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .btn-aksess-wrapper {
+    margin-top: 1.5rem;
+  }
+
+  .section5-container {
+    padding: 1rem;
+  }
+
+  .section5-judul-desc {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .clients-carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .clients-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .carousel-arrow {
+    font-size: 1.5rem;
+  }
+
+  .portfolio-button-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .portfolio-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .title-text {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .title-line {
+    width: 40px;
+    height: 3px;
+    background: white;
+    margin: 0 auto 1rem;
+  }
+
+  .about-content-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+
+  .text-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .left-text,
+  .right-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .left-text h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .right-text p {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: justify;
+  }
+
+  .image-wrapper {
+    padding: 0 16px;
+  }
+
+  .vision-mission-container {
+    padding: 24px;
+    margin-top: 40px;
+    min-width: unset;
+  }
+
+  .mission-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mission-card {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .mission-card h3 {
+    font-size: 18px;
+  }
+
+  .mission-card h4 {
+    font-size: 16px;
+  }
+
+  .mission-card p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .feature-highlight {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .feature-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .feature-text h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .feature-text p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .home-contact-container {
+    padding: 20px 15px;
+    flex-direction: column;
+  }
+
+  .home-contact-text-container {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .home-contact-journey,
+  .home-contact-akaal {
+    font-size: 1.5rem;
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+
+  .home-contact-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 10px 0;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-contact-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .home-contact-whatsapp,
+  .home-contact-email {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .home-contact-logo-container {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+  }
+
+  .home-digi-container {
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .service-card {
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+
+  .home-digi-right {
+    display: none;
+  }
+
+  .service-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .donut-img,
+  .home-contact-logo,
+  .service-image {
+    display: none !important;
+  }
+
+  .home-agen-container {
+    height: 1350px;
+  }
+
+  .agencardRow {
+    margin: 70px 0 0 0;
+  }
+
+  .textColumn {
+    transform: translateY(-10px) !important;
+  }
+
+  .data-img-wrapper {
+    max-width: 90% !important;
+    padding: 0 5px !important;
+  }
+
+  .data-img-wrapper img {
+    max-height: 40vh;
+  }
+
+  .showcase-button {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .agencardRow {
+    grid-template-columns: repeat(3, 1fr); /* Jadi 3 kolom saat desktop */
+  }
+}
+
+@media (max-width: 425px) {
+  .image-container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .image-container {
+    padding: 0;
+  }
+
+  .image-container {
+    padding: 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .service-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+  }
+
+  .home-contact-journey {
+    font-size: 1.3rem;
+  }
+
+  .home-contact-akaal {
+    font-size: 1.8rem;
+  }
+
+  .home-contact-description {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+  }
+
+  .data-img-wrapper {
+    max-width: 85% !important;
+  }
+
+  .showcase-button {
+    display: none;
+  }
+}

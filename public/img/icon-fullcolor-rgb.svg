@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 311.36 311.36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        fill: #150439;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="195.38" y1="45.55" x2="131.59" y2="240.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2acfea"/>
+      <stop offset="1" stop-color="#c929dc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="125.97" y1="22.87" x2="62.18" y2="218.12" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="199.26" y1="46.82" x2="135.46" y2="242.06" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="229.85" y1="56.81" x2="166.05" y2="252.06" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Akses-logo">
+    <rect class="cls-5" width="311.36" height="311.36" rx="70.09" ry="70.09"/>
+    <g>
+      <path class="cls-4" d="M183.54,229.72c0,15.61-7.68,28.15-7.68,28.15l-.02.05-76.07-76.07c14.23-8.37,32.02-10.35,48.58-3.83,21.86,8.61,35.2,29.54,35.2,51.7Z"/>
+      <path class="cls-3" d="M133.41,143.68c-6.85,17.37-21.45,29.35-38.27,33.55l-50.21-50.21h0s86.34-28.79,86.34-28.79c6.91,13.65,8.17,30.09,2.13,45.45Z"/>
+      <path class="cls-2" d="M241.3,61.55l-20.03,60.08c-14.89,11.06-34.99,14.42-53.53,7.11-15.21-5.99-26.29-17.94-31.62-32.12l105.18-35.07Z"/>
+      <path class="cls-1" d="M218.4,130.24l-28.73,86.2c-10.96-14.88-14.26-34.89-6.99-53.35,6.5-16.48,19.98-28.12,35.72-32.85Z"/>
+    </g>
+  </g>
+</svg>
