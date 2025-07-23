@@ -9,6 +9,7 @@ import Link from "next/link";
 import Icon from "@mdi/react";
 import { mdiWhatsapp, mdiEmail } from "@mdi/js";
 import ProjectCard from "../../../components/ProjectCard";
+import Head from "next/head";
 
 export default function SlugPage() {
   const router = useRouter();
@@ -48,8 +49,14 @@ export default function SlugPage() {
 
   if (!projectData) return <div>Loading...</div>;
 
+  // Capitalize slug for title
+  const pageTitle = slug ? slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : 'Article';
+
   return (
     <>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
       <div className="showcase-container">
         <div className="showcase-title">
           <div className="showcase-left">
@@ -77,11 +84,39 @@ export default function SlugPage() {
         </div>
       </div>
       <div className="image-section">
-        {projectData.image_2 && (
-          <div className="data-img-wrapper">
-            <img className="img" alt="Project" src={projectData.image_2} />
-          </div>
-        )}
+        {[...Array(9)].map((_, i) => {
+          const key = `image_${i + 2}`;
+          const src = projectData[key];
+          if (!src) return null;
+          return (
+            <div
+              key={key}
+              style={{
+                width: '100%',
+                maxWidth: '1296px',
+                aspectRatio: '16 / 9',
+                margin: '32px auto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'hidden',
+                background: '#18103a',
+                borderRadius: '12px',
+              }}
+            >
+              <img
+                src={src}
+                alt={`Project Image ${i + 2}`}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+              />
+            </div>
+          );
+        })}
 
         <section className="section-home-contact">
           <div className="home-contact-container">

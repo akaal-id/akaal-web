@@ -7,6 +7,7 @@ import Loader from "../../components/Loader";
 import ProjectCard from "../../components/ProjectCard";
 import useClientSide from '../hooks/useClientSide';
 import { initCarousel } from "../../utils/carousel";
+import Head from "next/head";
 
 export default function Showcase() {
   const isClient = useClientSide();
@@ -42,6 +43,9 @@ export default function Showcase() {
 
   return (
     <>
+      <Head>
+        <title>Showcase Portfolio</title>
+      </Head>
       {isLoading && <Loader />}
       <div style={{ display: isLoading ? "none" : "block" }}>
         <section className="hero-section" id="home">

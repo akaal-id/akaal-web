@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Loader from "../../components/Loader";
 import ResponsiveImage from "../../components/ResponsiveImage";
+import Head from "next/head";
 
 
 // Icon Imports
@@ -41,6 +42,9 @@ export default function Service() {
 
   return (
     <>
+      <Head>
+        <title>Our Services</title>
+      </Head>
       {isLoading && <Loader />}
       <div style={{ display: isLoading ? "none" : "block" }}>
         <section className="hero-section" id="home">

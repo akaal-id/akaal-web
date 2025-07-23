@@ -34,6 +34,8 @@ import Loader from "../../components/Loader";
 //   FaCheckCircle,
 // } from "react-icons/fa";
 
+import Head from "next/head";
+
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -48,6 +50,9 @@ export default function About() {
 
   return (
     <>
+      <Head>
+        <title>About Akaal</title>
+      </Head>
       {isLoading && <Loader />}
       <div style={{ display: isLoading ? "none" : "block" }}>
         {/* Hero Section */}

@@ -6,6 +6,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Loader from "../../components/Loader";
+import ProjectCard from "../../components/ProjectCard";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -40,6 +41,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [heroImages, setHeroImages] = useState([]);
+  const [projectCards, setProjectCards] = useState([]);
 
   useEffect(() => {
     let timer;
@@ -66,8 +68,16 @@ export default function Home() {
       }
     };
 
+    const fetchProjects = async () => {
+      const { data, error } = await supabase
+        .from("portofolio")
+        .select("id, image_1, client_name, judul, slug");
+      if (!error && data) setProjectCards(data);
+    };
+
     timer = setTimeout(() => setIsLoading(false), 3000);
     fetchData();
+    fetchProjects();
     return () => clearTimeout(timer);
   }, []);
 
@@ -248,8 +258,9 @@ export default function Home() {
                 src="/img/group51.png"
                 alt="Service Illustration"
                 className="service-image"
-                width={580}
-                height={410}
+                width={420}
+                height={297}
+                style={{ width: '100%', height: 'auto', maxWidth: '420px' }}
               />
             </div>
             <div className="service-card">
@@ -546,6 +557,38 @@ export default function Home() {
               <a href="#aksess" className="btn">
                 Jelajah AKSESS
               </a>
+            </div>
+          </div>
+        </section>
+        {/* New Projects Section */}
+        <section className="latest-projects-section">
+          <div className="latest-projects-header">
+            <div className="latest-projects-desc">
+              Kami telah berkolaborasi dengan berbagai brand, menghadirkan solusi digital yang memperkuat identitas dan memperluas jangkauan mereka.
+            </div>
+            <h2 className="latest-projects-title">
+              Our Latest <span className="highlight">Projects.</span>
+            </h2>
+          </div>
+          <div className="latest-projects-grid">
+            {projectCards.length > 0 ? (
+              projectCards.slice(0, 9).map((card) => <ProjectCard key={card.id} data={card} section="latest" />)
+            ) : (
+              <p>Loading...</p>
+            )}
+          </div>
+          <div className="clients-section">
+            <div className="clients-title">
+              Clients <span>and Partners</span>
+            </div>
+            <hr className="clients-line" />
+            <div className="clients-carousel">
+              <img src="/img/hei.png" alt="HEI" />
+              <img src="/img/bsi.png" alt="BSI" />
+              <img src="/img/ikram.png" alt="Ikram" />
+              <img src="/img/hijrahfest.png" alt="Hijrahfest" />
+              <img src="/img/laukstory.png" alt="Laukstory" />
+              <img src="/img/ocula.png" alt="Ocula" />
             </div>
           </div>
         </section>

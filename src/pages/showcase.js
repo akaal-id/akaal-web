@@ -9,6 +9,7 @@ import useClientSide from '../hooks/useClientSide';
 import { initCarousel } from "../../utils/carousel";
 import Icon from "@mdi/react";
 import { mdiWhatsapp, mdiEmail } from "@mdi/js";
+import Head from "next/head";
 
 export default function Showcase() {
   const [cards, setCards] = useState([]);
@@ -38,6 +39,9 @@ export default function Showcase() {
 
   return (
     <>
+      <Head>
+        <title>Showcase</title>
+      </Head>
       <div className="showcase-container">
         <div className="showcase-title">
           <div className="showcase-left">
