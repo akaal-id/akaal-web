@@ -135,6 +135,7 @@ body {
   color: transparent;
   background: linear-gradient(90deg, #c191ff, #ffffff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
   line-height: 1.2;
@@ -224,8 +225,8 @@ body {
     #bdf0f9 57.59%,
     #2acfea 101.72%
   );
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
   padding-bottom: 30px;
@@ -806,6 +807,7 @@ body {
 .section5-right span {
   background: linear-gradient(to right, rgb(225, 194, 255), #ec4899);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1088,8 +1090,8 @@ body {
   font-weight: 700;
   line-height: 1.4;
   background: linear-gradient(92deg, #fff 0.37%, #aaecf7 66.57%);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1454,8 +1456,8 @@ body {
   font-weight: 700;
   line-height: 1.4;
   background: linear-gradient(92deg, #fff 0.37%, #aaecf7 66.57%);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1603,6 +1605,7 @@ body {
 .button-text {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   color: white;
   display: -webkit-box;
   font-family: "Plus Jakarta Sans-Medium", Helvetica;
