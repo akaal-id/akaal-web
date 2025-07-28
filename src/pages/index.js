@@ -11,6 +11,9 @@ import ProjectCard from "../../components/ProjectCard";
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
 
+// Carousel utility
+import { initCarousel } from "../../utils/carousel";
+
 // Icon Imports
 import Icon from "@mdi/react";
 import {
@@ -80,6 +83,18 @@ export default function Home() {
     fetchProjects();
     return () => clearTimeout(timer);
   }, []);
+
+  // Initialize carousel after images are loaded
+  useEffect(() => {
+    if (heroImages.length > 0 && !isLoading) {
+      // Small delay to ensure DOM elements are ready
+      const timer = setTimeout(() => {
+        initCarousel();
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [heroImages, isLoading]);
 
 
   return (
@@ -222,7 +237,7 @@ export default function Home() {
         {/* Section 1 End*/}
 
         {/* Section 2 */}
-        <section className="section2" data-animate="fadeInUp">
+        <section className="section-services" data-animate="fadeInUp">
           <h2 className="section-title" data-animate="fadeInUp">
             What We Do: <br></br> Creative. Strategic. Informative.
           </h2>
@@ -234,163 +249,7 @@ export default function Home() {
             brand.
           </p>
 
-          <div className="home-digi-container" data-animate="fadeInUp">
-            <div className="home-digi-left">
-              <Image
-                src="/img/icon-white.png"
-                alt="Service Logo"
-                className="service-logo"
-                width={48}
-                height={48}
-              />
-              <h3>Our Services:</h3>
-              <h2>
-                <em>AKAAL DIGITAL & TECH</em>
-              </h2>
-              <p>
-                Solusi berbasis teknologi yang dirancang untuk memperkuat
-                fondasi digital bisnis Anda, mengoptimalkan operasional, dan
-                menciptakan pengalaman visual yang memikat.
-              </p>
-            </div>
-            <div className="home-digi-right">
-              <Image
-                src="/img/group51.png"
-                alt="Service Illustration"
-                className="service-image"
-                width={420}
-                height={297}
-                style={{ width: '100%', height: 'auto', maxWidth: '420px' }}
-              />
-            </div>
-            <div className="service-card">
-              <FiTrendingUp className="service-icon" size={35} />
-              <h4>High-Conversion Landing Pages</h4>
-              <p>
-                Desain yang responsif dan strategis, dirancang untuk
-                meningkatkan penjualan, memperkuat keterlibatan, dan membangun
-                koneksi yang lebih dalam dengan audiens Anda.
-              </p>
-            </div>
-
-            <div className="service-card">
-              <FiShield className="service-icon" size={35} />
-              <h4>Website Maintenance</h4>
-              <p>
-                Layanan menyeluruh mencakup pembaruan keamanan, pengecekan
-                performa rutin, dan perbaikan bug, agar website Anda tetap
-                stabil, cepat, dan aman sepanjang waktu.
-              </p>
-            </div>
-
-            <div className="service-card">
-              <FaCheckCircle className="service-icon" size={30} />
-              <h4>Professional UI/UX Design</h4>
-              <p>
-                Antarmuka yang intuitif dan ramah pengguna, dirancang untuk
-                memberikan pengalaman terbaik bagi pengunjung serta mendukung
-                pencapaian tujuan bisnis Anda secara efektif.
-              </p>
-            </div>
-
-            <div className="service-card">
-              <BiSearchAlt2 className="service-icon" size={35} />
-              <h4>SEO Optimization</h4>
-              <p>
-                Penerapan strategi kata kunci yang tepat dan penyesuaian konten
-                yang relevan untuk meningkatkan visibilitas di search engine
-                serta mendatangkan trafik berkualitas ke website.
-              </p>
-            </div>
-          </div>
         </section>
-        <section className="section-home-agen">
-          <div
-            className="home-agen-container"
-            data-animate="fadeInUp"
-            data-animate-delay="200"
-          >
-            {/* Top Section */}
-            <div className="topSection">
-              <div className="imageColumn">
-                <Image
-                  src="/img/donut.png"
-                  alt="Donut"
-                  className="donut-img"
-                  width={549}
-                  height={420}
-                />
-              </div>
-              <div
-                className="textColumn"
-                data-animate="fadeInUp"
-                data-animate-delay="200"
-              >
-                <Image
-                  src="/img/icon-white.png"
-                  alt="IconWhite"
-                  className="iconwhite-img"
-                  width={48}
-                  height={48}
-                />
-                <p
-                  className="serviceLabel"
-                  data-animate="fadeInUp"
-                  data-animate-delay="200"
-                >
-                  Our Services:
-                </p>
-                <h2
-                  className="agencyTitle"
-                  data-animate="fadeInUp"
-                  data-animate-delay="200"
-                >
-                  AKAAL CREATIVE AGENCY
-                </h2>
-                <p
-                  className="agendesc"
-                  data-animate="fadeInUp"
-                  data-animate-delay="200"
-                >
-                  Solusi berbasis teknologi yang dirancang untuk memperkuat
-                  fondasi digital bisnis Anda, mengoptimalkan operasional, dan
-                  menciptakan pengalaman visual yang memikat.
-                </p>
-              </div>
-            </div>
-
-            {/* Card Section */}
-            <div className="agencardRow">
-              <div className="agencard">
-                <FaPaintBrush className="icon" />
-                <h3 className="agencardTitle">Branding & Visual Identity</h3>
-                <p className="agencardText">
-                  Membangun identitas merek yang kuat dan konsisten di setiap
-                  titik interaksi.
-                </p>
-              </div>
-
-              <div className="agencard">
-                <FaCameraRetro className="icon" />
-                <h3 className="agencardTitle">Creative Content Production</h3>
-                <p className="agencardText">
-                  Konten visual kreatif yang menarik dan relevan untuk
-                  memperkuat pesan brand Anda.
-                </p>
-              </div>
-
-              <div className="agencard">
-                <FaBullhorn className="icon" />
-                <h3 className="agencardTitle">Digital Marketing</h3>
-                <p className="agencardText">
-                  Strategi pemasaran digital yang tepat sasaran untuk menjangkau
-                  audiens dan meningkatkan performa bisnis.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="section-home-contact">
           <div className="home-contact-container">
             <div className="home-contact-text-container">

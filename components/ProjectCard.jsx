@@ -24,13 +24,6 @@ export default function ProjectCard({ data }) {
               <p className="client-name">{data.client_name || "PT. XYZ"}</p>
               <p className="service-type">{data.judul || "Social Media and Branding"}</p>
             </div>
-            <div className="content-right">
-              <div className="agency-wrapper">
-                <p className="agency-name">
-                  AKAAL<br />Agency
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

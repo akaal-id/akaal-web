@@ -970,11 +970,6 @@ body {
   gap: 4px;
   flex: 1;
 }
-.content-right {
-  margin-left: 24px;
-  text-align: right;
-}
-
 .client-name {
   color: #C084FC;
   font-size: 14px;
@@ -986,33 +981,6 @@ body {
   color: white;
   font-size: 18px;
   font-weight: 600;
-}
-
-.agency-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 2px;
-  background-color: #C084FC;
-}
-.agency-wrapper {
-  position: relative;
-}
-
-.agency-name {
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  font-style: italic;
-  margin: 0;
-  line-height: 1.2;
-  position: relative;
-}
-.agency-name, .agency-wrapper {
-    padding-top: 6px;
-    position: relative;
 }
 
 .project-card-link {

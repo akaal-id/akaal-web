@@ -14,6 +14,10 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid d-flex justify-content-between align-items-center">
@@ -34,6 +38,7 @@ export default function Navbar() {
           className="d-lg-none btn btn-link text-white p-0"
           onClick={toggleMenu}
           aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
         >
           <Icon 
             path={isMenuOpen ? mdiClose : mdiMenu} 
@@ -45,16 +50,16 @@ export default function Navbar() {
         <div className={`custom-collapse ${isMenuOpen ? 'show' : ''}`}>
           <ul className="navbar-nav d-flex gap-4">
             <li className="nav-item">
-              <Link href="/" className="nav-link">Home</Link>
+              <Link href="/" className="nav-link" onClick={closeMenu}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link href="/about" className="nav-link">About Akaal</Link>
+              <Link href="/about" className="nav-link" onClick={closeMenu}>About Akaal</Link>
             </li>
             <li className="nav-item">
-              <Link href="/service" className="nav-link">Our Services</Link>
+              <Link href="/service" className="nav-link" onClick={closeMenu}>Our Services</Link>
             </li>
             <li className="nav-item">
-              <Link href="/porto-showcase" className="nav-link">Showcase</Link>
+              <Link href="/porto-showcase" className="nav-link" onClick={closeMenu}>Showcase</Link>
             </li>
           </ul>
         </div>
