@@ -96,6 +96,15 @@ export default function Home() {
     }
   }, [heroImages, isLoading]);
 
+  // Auto-scrolling client logos
+  const clientLogos = [
+    { src: "/img/hei.png", alt: "HEI" },
+    { src: "/img/bsi.png", alt: "BSI" },
+    { src: "/img/ikram.png", alt: "Ikram" },
+    { src: "/img/hijrahfest.png", alt: "Hijrahfest" },
+    { src: "/img/laukstory.png", alt: "Laukstory" },
+    { src: "/img/ocula.png", alt: "Ocula" },
+  ];
 
   return (
     <>
@@ -236,98 +245,6 @@ export default function Home() {
         </section>
         {/* Section 1 End*/}
 
-        {/* Section 2 */}
-        <section className="section-services" data-animate="fadeInUp">
-          <h2 className="section-title" data-animate="fadeInUp">
-            What We Do: <br></br> Creative. Strategic. Informative.
-          </h2>
-          <p className="section-desc" data-animate="fadeInUp">
-            Solusi digital menyeluruh yang dirancang untuk membentuk masa depan
-            bisnis Anda. Kami membaginya menjadi dua pilar utama: Akaal Digital
-            untuk transformasi <br></br>
-            teknologi, dan Akaal Agency untuk kekuatan strategi serta komunikasi
-            brand.
-          </p>
-
-        </section>
-        <section className="section-home-contact">
-          <div className="home-contact-container">
-            <div className="home-contact-text-container">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  flexWrap: "nowrap",
-                }}
-              >
-                <div className="home-contact-journey">
-                  Start Your Journey With
-                </div>
-                <div className="home-contact-akaal">AKAAL</div>
-              </div>
-              <div className="home-contact-description">
-                Setiap bisnis punya tantangan dan tujuan unik—kami siap
-                mendengarkan dan membantu Anda menemukan solusinya.
-              </div>
-              <div className="home-contact-action">
-                <div className="contact-row">
-                  <Link href="https://wa.me/6281213957471" legacyBehavior>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="home-contact-button-link"
-                    >
-                      <button className="home-contact-button">
-                        Tell Us Your Idea
-                      </button>
-                    </a>
-                  </Link>
-                  <a
-                    href="https://wa.me/6281213957471"
-                    className="home-contact-whatsapp"
-                  >
-                    <span className="home-contact-icon">
-                      <Icon path={mdiWhatsapp} size={1.2} />
-                    </span>
-                    <span className="home-contact-text">+6281213957471</span>
-                  </a>
-                  <a
-                    href="mailto:asiakaryalumina@gmail.com"
-                    className="home-contact-email"
-                  >
-                    <span className="home-contact-icon">
-                      <Icon path={mdiEmail} size={1} />
-                    </span>
-                    <span className="home-contact-text">
-                      asiakaryalumina@gmail.com
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="home-contact-logo-container">
-              <Image
-                src="/img/icon-white-big.png"
-                alt="Akaal Logo"
-                fill
-                priority
-                className="home-contact-logo"
-                style={{ marginTop: "-110px" }}
-              />
-            </div>
-          </div>
-        </section>
-        <div className="home-contact-service-button">
-          <Link href="/service" className="btn btn-primary">
-            Our Services
-          </Link>
-        </div>
-
-
-
-        {/* Section 2 */}
-
         {/* Section 3 */}
         <section className="section3">
           <div className="wrapper" data-animate="fadeInUp">
@@ -441,13 +358,36 @@ export default function Home() {
               Clients <span>and Partners</span>
             </div>
             <hr className="clients-line" />
-            <div className="clients-carousel">
-              <img src="/img/hei.png" alt="HEI" />
-              <img src="/img/bsi.png" alt="BSI" />
-              <img src="/img/ikram.png" alt="Ikram" />
-              <img src="/img/hijrahfest.png" alt="Hijrahfest" />
-              <img src="/img/laukstory.png" alt="Laukstory" />
-              <img src="/img/ocula.png" alt="Ocula" />
+            <div className="clients-scroll-container">
+              <div className="clients-scroll">
+                {/* First set of logos */}
+                {clientLogos.map((logo, idx) => (
+                  <img
+                    key={`${logo.src}-${idx}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="client-logo"
+                  />
+                ))}
+                {/* Second set for seamless loop */}
+                {clientLogos.map((logo, idx) => (
+                  <img
+                    key={`${logo.src}-duplicate-${idx}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="client-logo"
+                  />
+                ))}
+                {/* Third set to ensure no gaps */}
+                {clientLogos.map((logo, idx) => (
+                  <img
+                    key={`${logo.src}-triplicate-${idx}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="client-logo"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
