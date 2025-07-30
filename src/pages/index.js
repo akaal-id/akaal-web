@@ -279,6 +279,56 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Section Services */}
+        <section className="section-services">
+          <div className="services-container">
+            <div className="services-top">
+              <div className="services-left">
+                <div className="services-header">
+                  <Image
+                    src="/img/icon-white.png"
+                    alt="Services Icon"
+                    width={20}
+                    height={20}
+                    className="services-icon"
+                  />
+                  <span className="services-label">OUR SERVICES</span>
+                </div>
+                <h2 className="services-title">
+                  What We Do: <span className="gradient-text">Creative.</span> <span className="gradient-text">Strategic.</span> <span className="gradient-text">Transformative.</span>
+                </h2>
+                <p className="services-description">
+                  Solusi digital menyeluruh yang dirancang untuk membentuk masa depan bisnis Anda. Kami membaginya menjadi dua pilar utama: Akaal Digital untuk transformasi teknologi, dan Akaal Agency untuk kekuatan strategi serta komunikasi brand.
+                </p>
+              </div>
+              <div className="services-right">
+                <Image
+                  src="/img/group51.png"
+                  alt="Services Illustration"
+                  width={600}
+                  height={400}
+                  className="services-image"
+                />
+              </div>
+            </div>
+            
+            <div className="services-bottom">
+              <div className="service-card">
+                <h3 className="service-card-title">AKAAL DIGITAL & TECH</h3>
+                <p className="service-card-description">
+                  Transformasi teknologi yang mengoptimalkan operasional bisnis Anda. Kami menghadirkan solusi IT yang inovatif, pengembangan aplikasi custom, dan integrasi sistem yang seamless untuk mendorong efisiensi dan pertumbuhan digital.
+                </p>
+              </div>
+              <div className="service-card">
+                <h3 className="service-card-title">AKAAL CREATIVE AGENCY</h3>
+                <p className="service-card-description">
+                  Kekuatan strategi dan komunikasi brand yang membangun koneksi emosional dengan audiens. Dari branding hingga digital marketing, kami menciptakan narasi yang powerful dan kampanye yang berdampak.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Section 4 */}
         <section className="section4">
           <div className="content" data-animate="fadeInUp">
